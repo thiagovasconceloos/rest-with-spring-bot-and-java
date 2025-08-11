@@ -87,14 +87,14 @@ public class MathController {
     }
 
 
-    @RequestMapping("squareRoot/{numberOne}/{numberTwo}")
+    @RequestMapping("squareroot/{number}")
     public Double squareRoot(
-            @PathVariable("numberOne")String numberOne,
-            @PathVariable("numberTwo")     String numberTwo
+            @PathVariable("number")String number
+
     ) throws Exception {
 
-        if(!isNumeric(numberOne) || !isNumeric(numberTwo))  throw new UnsupportedMathOperationException("Please set a numeric value");
-        return Math.sqrt(convertToDouble(numberOne) + convertToDouble(numberTwo));
+        if(!isNumeric(number) )  throw new UnsupportedMathOperationException("Please set a numeric value");
+        return Math.sqrt(convertToDouble(number));
 
     }
 }
